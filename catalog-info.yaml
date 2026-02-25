@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-tests-java-quarkus-slblwlgr-gitops
+  description: This is GitOps manifest for backend-tests-java-quarkus-slblwlgr   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=backend-tests-java-quarkus-slblwlgr
+    backstage.io/kubernetes-id: backend-tests-java-quarkus-slblwlgr 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: backend-tests-java-quarkus-slblwlgr
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:backend-tests-java-quarkus-slblwlgr
